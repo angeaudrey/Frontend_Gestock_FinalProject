@@ -1,0 +1,62 @@
+
+<div class="container"  >
+
+
+
+   <div class="row">
+    <div class="col-md-6" *ngFor="let article of produit ">
+      <h1 style="color: blue;">Proposer un troc à {{article.name}}  </h1>
+   Vous voulez : <p style="font-style: italic;font-weight:bolder;color:yellowgreen;font-size:20px;">{{ article.designation }}</p>
+      <img [src]="article.photo" class="img-fluid" alt="{{ article.designation}}">
+      <p> Description : {{ article.description }}</p>
+      <p>Montant de l estimation : {{ article.montantestimation }} CFA</p>
+      <!-- <button class="btn btn-primary">Faire une proposition</button> -->
+    </div>
+    <div class="col-md-6">
+     Selectionnez ce que vous  proposez ci dessous : <b style="font-style: italic;font-weight:bolder;color:yellowgreen;font-size:20px;"></b>
+
+
+
+       <div class="card">
+        <h4 class="card-header py-3" style="background-color: orange;">Faire une demande</h4>
+        <div class="card-body">
+            <form [formGroup]="form">
+                <div class="mb-3">
+                  <p> Selectionner un article : </p>
+
+                  <select id="idarticledemande" formControlName="idarticledemande" name="idarticledemande" class="form-control">
+                    <option value="">Selectionner un article</option>
+                    <option *ngFor="let article of produit1" [value]="article.id">{{article.designation}}-{{article.montantestimation}} CFA </option>
+                  </select>
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Message a transmettre</label>
+                    <input name="message" formControlName="message" type="text"  class="form-control"/>
+
+                </div>
+                <div class="mb-3" style="display: none;">
+                   <input name="idarticlequirecois"  value="{{identifiant}}" formControlName="idarticlequirecois" type="text"  class="form-control"/>
+
+              </div>
+
+
+
+
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                  <button type="button" class="btn btn-primary btn-lg px-4 gap-3"  (click)="proposition()">Faire une proposition</button>
+                  <button type="button" class="btn btn-outline-secondary btn-lg px-4">Inscription</button>
+                </div>
+
+
+
+            </form>
+        </div>
+    </div>
+    </div>
+
+
+  </div>
+
+
+</div>

@@ -1,0 +1,32 @@
+
+
+
+<h1>Mes propositions de troc en attente de validation</h1>
+
+<div>
+  <div class="row">
+
+    <div class="col-sm-3" *ngFor="let article of total[0]">
+      <div class="card">
+        <img class="card-img-top" [src]="article.photodemande" alt="{{ article.designation }}" width="150" height="150">
+
+        <div class="card-body">
+          <h5 class="card-title" style="color: black;">Aricle qui ma été proposer : {{article.articlequirecoistrue }}</h5>
+          <h5 class="card-title">Aricle que je possede : {{article.articledemande}}</h5>
+          <h5 class="card-title">Estimation en FCFA de l'article qui ma ete proposer : {{article.montantestimationrecois }} FCFA</h5>
+          <h5 class="card-title">Estimation en FCFA de l 'article que je possede : {{article.montantestimationdemande}} FCFA</h5>
+          <h5 class="card-title">Date de creation de la proposition : {{article.dateproposition | date:'medium'}}</h5>
+
+           <b style="color: orange;">{{article.etatproposition}}</b>
+           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button type="button" class="btn btn-primary btn-lg px-4 gap-3" (click)="accepter(article.id)"  >Accepter </button>
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4" >Refuser</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

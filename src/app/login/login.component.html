@@ -1,0 +1,31 @@
+
+
+
+<div class="col-md-6 offset-md-3 mt-5">
+  <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+
+  <div class="card">
+      <h4 class="card-header py-3" style="background-color: orange;">Connexion Application de troc</h4>
+      <div class="card-body">
+          <form [formGroup]="form">
+              <div class="mb-3">
+                  <label class="form-label">Username</label>
+                  <input type="text" name="username" formControlName="username"  class="form-control"/>
+
+              </div>
+              <div class="mb-3">
+                  <label class="form-label">Password</label>
+                  <input name="password" formControlName="password" type="password"  class="form-control"/>
+
+              </div>
+              <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <button type="button" class="btn btn-primary btn-lg px-4 gap-3" (click)="login()">Login</button>
+                <button type="button" class="btn btn-outline-secondary btn-lg px-4" (click)="register()">Inscription</button>
+              </div>
+
+
+
+          </form>
+      </div>
+  </div>
+</div>

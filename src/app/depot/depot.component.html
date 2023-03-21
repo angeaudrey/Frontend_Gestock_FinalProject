@@ -1,0 +1,89 @@
+<!-- <form [formGroup]="form" (ngSubmit)="submitForm()">
+  <div class="form-group">
+    <label for="image">Image</label>
+    <input id="image" type="file" (change)="uploadFile($event)" class="form-control-file">
+    <br>
+
+    <label for="designation">Designation</label>
+    <input id="designation" type="text" formControlName="designation" class="form-control"/>
+
+    <label for="description">Description</label>
+    <textarea id="description" formControlName="description" class="form-control"></textarea>
+
+    <label for="statut">Statut</label>
+    <select id="statut" formControlName="statut" class="form-control">
+      <option value="true">True</option>
+      <option value="false" >False</option>
+
+    </select>
+
+
+    <label for="idcategorie"> Categorie</label>
+     <select id="idcategorie" formControlName="idcategorie" class="form-control">
+      <option *ngFor="let article of total[0]" [value]="article.id">{{article.designation}}</option>
+
+    </select>
+
+    <label for="montantestimation">Montant Estimation</label>
+    <input id="montantestimation" type="text" formControlName="montantestimation" class="form-control"/>
+
+    <button type="submit" class="btn btn-primary mt-3">Envoyer</button>
+  </div>
+</form> -->
+
+
+<section class="vh-100 bg-image">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;background-color: wheat;" >
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Poster une Annonce</h2>
+
+              <form [formGroup]="form" (ngSubmit)="submitForm()">
+                <div class="form-group">
+                  <label for="image">Image</label>
+                  <input id="image" type="file" (change)="uploadFile($event)" class="form-control form-control-lg" required>
+
+                  <label for="designation">Designation</label>
+                  <input id="designation" type="text" formControlName="designation" class="form-control"/>
+                  <div *ngIf="form.controls['designation'].invalid && (form.controls['designation'].dirty || form.controls['designation'].touched)" class="alert alert-danger">
+                        <div *ngIf="form.controls['designation'].errors">
+                          Le nom est requis.
+                        </div>
+                      </div>
+                  <label for="description">Description</label>
+                  <textarea id="description" formControlName="description" class="form-control"></textarea>
+<!--
+                  <label for="statut">Statut</label>
+                  <select id="statut" formControlName="statut" class="form-control">
+                    <option value="true">True</option>
+                    <option value="false" >False</option>
+
+                  </select> -->
+
+
+                  <label for="idcategorie"> Categorie</label>
+                   <select id="idcategorie" formControlName="idcategorie" class="form-control">
+                    <option *ngFor="let article of total[0]" [value]="article.id">{{article.designation}}</option>
+
+                  </select>
+
+                  <label for="montantestimation">Montant Estimation</label>
+                  <input id="montantestimation" type="number" formControlName="montantestimation" class="form-control"/>
+                  <br>
+                  <button type="submit" class="btn form-control btn-primary">Envoyer</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+ <br>
+ <br>
+ <br>
