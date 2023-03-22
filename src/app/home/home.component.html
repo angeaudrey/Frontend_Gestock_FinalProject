@@ -1,4 +1,4 @@
-
+<br>
 <div class="container">
 <div class="row" *ngIf="total.length >0">
   <div class="col-md-4" *ngFor="let article of total[0]">
@@ -11,14 +11,13 @@
         <p class="card-text"><small class="text-muted">{{ article.datecreation | date:'medium' }}</small></p>
         <p class="card-text"><small class="text-muted">{{ article.category }}</small></p>
         <a [routerLink]="['/detail', article.id]" class="btn btn-primary">Voir le detail</a>
-
       </div>
     </div>
+    <br>
   </div>
+
 </div>
-
 <div class="row" *ngIf="total.length == 0">
-
   <h1 style="color: red;font-style:italic;font-weight:bold;text-align: center;"> Aucun article sur le site</h1>
 </div>
 </div>

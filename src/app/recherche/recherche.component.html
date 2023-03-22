@@ -1,87 +1,26 @@
-<!-- <div class="container">
-  <h2 class="text-center mb-4">Formulaire de Recherche</h2>
-
-  <div class="row">
-    <div class="col-md-6 mx-auto">
-      <form class="form-inline" (ngSubmit)="search()" [formGroup]="form">
-        <div class="form-group">
-          <label for="idcategorie"> Designation article </label>
-
-          <input id="designation" type="text" formControlName="designation" class="form-control" required="true"/>
-          <label for="idcategorie"> Categorie</label>
-          <select id="idcategorie" formControlName="idcategorie" class="form-control">
-            <option *ngFor="let article of total[0]" [value]="article.id">{{article.designation}}</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Rechercher</button>
-      </form>
-    </div>
-  </div>
-</div>
-
-
-<div class="container">
-
-<div  *ngIf="listearticlereq.length >0">
-  <div class="card mb-3" *ngFor=" let article of listearticlereq[0] ">
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img class="card-img-top" [src]="article.photo" class="card-img" width="200" height="200" alt="{{ article.designation }}">
-
-       </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">{{ article.designation }}</h5>
-          <p class="card-text">{{ article.description }}</p>
-          <p class="card-text">{{ article.montantestimation }} CFA</p>
-          <p class="card-text"><small class="text-muted">{{ article.datecreation | date:'medium' }}</small></p>
-          <a [routerLink]="['/detail', article.id]" class="btn btn-primary">Voir le detail</a>
-
-         </div>
+ <h4 class="text-center mb-4">Recherchons un bien</h4>
+ <div class="contenir" >
+    <form class="row g-12" (ngSubmit)="search()" [formGroup]="form">
+      <div class="col-auto">
+        <input id="designation" type="text" formControlName="designation" placeholder="designation" class="form-control"/>
       </div>
-    </div>
-  </div>
-</div>
-
-
-<div  *ngIf="listearticlereq.length ===0">
-
- <h1 style="color: red;font-style:italic;font-weight:bold;text-align: center;"> Aucun article ne correspond a votre recherche</h1>
-</div>
-</div>
-
- -->
-
-
-
- <h2 class="text-center mb-4">Recherchons un bien</h2>
-
- <div class="contenir">
-
-   <form class="row g-3" (ngSubmit)="search()" [formGroup]="form">
-   <div class="col-auto">
-     <input id="designation" type="text" formControlName="designation" placeholder="designation" class="form-control"/>
-   </div>
-   <div class="col-auto">
- <select id="idcategorie" formControlName="idcategorie" class="form-control">
-           <option value="" disabled selected> Sélection de la Catégorie</option>
-             <option *ngFor="let article of total[0]" [value]="article.id">{{article.designation}}</option>
-           </select>
-           </div>
-   <div class="col-auto">
-     <button type="submit" class="btn btn-primary mb-3">Rechercher</button>
-   </div>
- </form>
+      <div class="col-auto">
+            <select id="idcategorie" formControlName="idcategorie" class="form-control">
+              <option value="" disabled selected> Sélection de la Catégorie</option>
+              <option *ngFor="let article of total[0]" [value]="article.id">{{article.designation}}</option>
+            </select>
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Rechercher</button>
+      </div>
+    </form>
  </div>
-
  <div class="container">
-
  <div  *ngIf="listearticlereq.length >0">
    <div class="card mb-3" *ngFor=" let article of listearticlereq[0] ">
      <div class="row no-gutters">
        <div class="col-md-4">
          <img class="card-img-top" [src]="article.photo" class="card-img" width="200" height="200" alt="{{ article.designation }}">
-
         </div>
        <div class="col-md-8">
          <div class="card-body">
@@ -90,14 +29,12 @@
            <p class="card-text">{{ article.montantestimation }} CFA</p>
            <p class="card-text"><small class="text-muted">{{ article.datecreation | date:'medium' }}</small></p>
            <a [routerLink]="['/detail', article.id]" class="btn btn-primary">Voir le detail</a>
-
           </div>
        </div>
      </div>
    </div>
  </div>
 <div  *ngIf="listearticlereq.length ===0">
-
  <h1 style="color: red;font-style:italic;font-weight:bold;text-align: center;"> Aucun article ne correspond a votre recherche</h1>
 </div>
  </div>

@@ -6,14 +6,12 @@
     <div class="col-sm-3" *ngFor="let article of total[0]">
       <div class="card">
         <img class="card-img-top" [src]="article.photorecois" alt="{{ article.designation }}" width="150" height="150">
-
         <div class="card-body">
           <h5 class="card-title">Aricle que je souhaite avoir : {{article.articledemande}}</h5>
           <h5 class="card-title">Aricle que je possede : {{article.articlequirecoistrue}}</h5>
           <h5 class="card-title">Estimation en FCFA de l'article que je souhaite avoir : {{article.montantestimationdemande}} FCFA</h5>
           <h5 class="card-title">Estimation en FCFA de l 'article que je possede : {{article.montantestimationrecois}} FCFA</h5>
           <h5 class="card-title">Date de creation de la proposition : {{article.dateproposition | date:'medium'}}</h5>
-
            <a href="#" class="btn btn-primary">{{article.etatproposition}}</a>
         </div>
       </div>
